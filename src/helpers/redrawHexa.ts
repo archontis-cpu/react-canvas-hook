@@ -1,20 +1,22 @@
-import { config, drawRect, addDot, refreshDots, cnv } from "./index";
+import { config, addDot, refreshDots, cnv } from "./draw";
 
-export default function drawHexa(
-  canvas: HTMLCanvasElement,
-  context: CanvasRenderingContext2D
-) {
-  drawRect(
-    context,
-    config.backgroundFillColor,
-    0,
-    0,
-    cnv.cw,
-    cnv.ch,
-    0,
-    0,
-    "normal"
-  );
+import {
+  drawRectGCO,
+  drawRectShadow,
+  drawRectBlur,
+  drawRectFillColor,
+  drawRectFill,
+} from "./drawRect";
+
+const color = config.backgroundFillColor;
+
+export default function drawHexa(context: CanvasRenderingContext2D) {
+  drawRectGCO(context, "normal");
+  drawRectShadow(context, color);
+  drawRectBlur(context, 0);
+  drawRectFillColor(context, color);
+  drawRectFill(context, 0, 0, cnv.cw, cnv.ch);
+
   addDot(context);
   refreshDots();
 }
