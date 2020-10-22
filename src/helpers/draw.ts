@@ -12,7 +12,7 @@ const background = "rgba(50, 50, 50, 0.01)";
 export const config = {
   hue: 0,
   backgroundFillColor: background,
-  dirsCount: 6,
+  dirsCount: 3,
   stepsToTurn: 20,
   dotSize: 1,
   dotsCount: 300,
