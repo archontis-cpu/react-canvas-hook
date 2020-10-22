@@ -19,7 +19,7 @@ export const config = {
   dotVelocity: 3,
   distance: 200,
   gradientLength: 10,
-  gridAngle: 0,
+  gridAngle: 45,
 };
 
 export const cnv = {
